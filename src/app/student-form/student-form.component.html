@@ -1,0 +1,58 @@
+<div class="container">
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="newStudent" (ngSubmit)="onSubmit()" #studentForm="ngForm">
+<!--      <form [formGroup]="student" (ngSubmit)="onSubmit()" #studentForm="ngForm">-->
+      <div class="form-group">
+        <label for="name">Name</label>
+<!--        <input type="text" [(ngModel)]="student.email"-->
+        <input type="text" formControlName="name"
+               class="form-control"
+               id="name"
+               name="name"
+               placeholder="Enter student name">
+<!--               required #name="ngModel">-->
+<!--      <div [hidden]="!name.pristine" class="alert alert-danger">Name is required</div>-->
+      <div class="form-group">
+        <label for="major">major</label>
+        <input type="text" formControlName="major"
+               class="form-control"
+               id="major"
+               name="major"
+               placeholder="Enter student major">
+<!--               required #major="ngModel">-->
+      </div>
+<!--      <div [hidden]="!major.pristine" class="alert alert-danger">major is required</div>-->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" formControlName="email"
+               class="form-control"
+               id="email"
+               name="email"
+               placeholder="Enter student email">
+      </div>
+<!--      <div class="form-group">-->
+<!--        <label for="classroomid">Classroom id: </label>-->
+<!--        <select id="classroomid" class="form-select" multiple formControlName="classroomIds">-->
+<!--          <option *ngFor="let classroom of classrooms" >{{classroom.roomNumber}}</option>-->
+<!--        </select>-->
+<!--      </div>-->
+          <div class="form-group">
+          <p-multiSelect
+          [options]="classrooms"
+          formControlName="classroomIds"
+          optionLabel="roomNumber"
+          optionValue="id"
+          placeholder= "select classrooms"
+          [filter]="false"
+          [panelStyle]="{'min-width':'999px','background-color':'white'}">
+
+        </p-multiSelect>
+        </div>
+        <button type="submit" [disabled]="!studentForm.form.valid"
+              class="btn btn-info">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
