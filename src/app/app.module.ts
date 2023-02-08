@@ -11,11 +11,10 @@ import { SchoolService } from "./SchoolService";
 import { ReactiveFormsModule } from '@angular/forms';
 // import { AccordionModule } from 'primeng/accordion';
 // import { MenuItem } from 'primeng/api';
+import {InputTextModule} from 'primeng/inputtext';
 import {MultiSelectModule} from 'primeng/multiselect';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ColorPickerModule} from 'primeng/colorpicker';
-
-
 
 @NgModule({
   declarations: [
@@ -32,6 +31,7 @@ import {ColorPickerModule} from 'primeng/colorpicker';
     RouterOutlet,
     BrowserAnimationsModule,
     ColorPickerModule,
+    InputTextModule,
     MultiSelectModule
   ],
   providers: [SchoolService],
